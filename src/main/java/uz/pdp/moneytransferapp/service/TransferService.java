@@ -48,7 +48,7 @@ public class TransferService {
         if(fromCard.getBalance() < transferDto.getAmount()+ transferDto.getAmount()*COMMISSION){
             return new ApiResponse("Mablag' yetarli emas!",false);
         }
-        fromCard.setBalance(fromCard.getBalance() - transferDto.getAmount()+ transferDto.getAmount()*COMMISSION);
+        fromCard.setBalance(fromCard.getBalance() - transferDto.getAmount()- transferDto.getAmount()*COMMISSION);
         cardRepo.save(fromCard);
 
         toCard.setBalance(toCard.getBalance() + transferDto.getAmount());
