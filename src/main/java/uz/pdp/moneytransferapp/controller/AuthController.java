@@ -27,10 +27,6 @@ public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
 
-    @GetMapping("/logout")
-    public String getLogout(){
-        return "Logout!";
-    }
 
     @PostMapping("/login")
     public HttpEntity<?> loginToSystem(@RequestBody LoginDto loginDto) {
